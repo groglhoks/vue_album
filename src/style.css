@@ -252,7 +252,7 @@ vertical-align:bottom; */
   float: left;
 }
 
-.photo_favotive_wrapper {
+.photo_favorite_wrapper {
   /* display: inline-block; */
   float: left;
   height: 25px;
@@ -262,7 +262,7 @@ vertical-align:bottom; */
   margin-top: 23px;
 }
 
-.photo_favotive_wrapper img {
+.photo_favorite_wrapper img {
   object-fit: cover;
   width: 100%;
   height: 100%;

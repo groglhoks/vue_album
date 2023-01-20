@@ -4,22 +4,19 @@
         <!-- <div class="photos_line">
               </div> -->
         <div class="photos_container">
-            <div v-for="photo in photos"  v-bind:key="photo.id" class="photo_line">
-                <div class="photo_favotive_wrapper">
-                    <img src="../assets/photo_not_favorite.ico" />
-                </div>
-                <div class="photo_wrapper">
-                    <img v-bind:src="photo.thumbnailUrl" />
-                </div>
-            </div>
+            <Photo v-for="photo in photos"  v-bind:key="photo.id" v-bind:photo="photo"/>
         </div>
     </div>
 
 </template>
 
 <script>
+
+    import Photo from './Photo.vue'
+
     export default {
-        props: ['photos']
+        props: ['photos'],
+        components: {Photo}
     }
 
 </script>
