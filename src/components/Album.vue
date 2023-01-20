@@ -5,7 +5,7 @@
             <div class="album_name"> {{ album.title }}  </div>
         </div>
     </div> 
-    <Photos v-bind:photos="photos"/>
+    <Photos v-bind:photos="photos" @addPhoto="addPhoto"/>
 </template>
 
 <script>
@@ -14,7 +14,6 @@ import Photos from './Photos.vue';
 
 export default {
     props: ['album'],
-
     data() {
         return {
             expanded: false,
@@ -35,13 +34,16 @@ export default {
                     .then((response) => response.json())
                     .then((json) => {
                         this.photos = json;
-
-                        console.log(this.photos);
+                        // console.log(this.photos);
                     });
             } else {
                 this.photos = [];
             }
-        }
+        },
+        addPhoto(photo) {
+                // console.log(photo);
+                this.$emit('addPhoto', photo);
+            }
        
     },
 

@@ -4,7 +4,7 @@
         <!-- <div class="photos_line">
               </div> -->
         <div class="photos_container">
-            <Photo v-for="photo in photos"  v-bind:key="photo.id" v-bind:photo="photo"/>
+            <Photo v-for="photo in photos" v-bind:key="photo.id" v-bind:photo="photo" @addPhoto="addPhoto"/>
         </div>
     </div>
 
@@ -16,7 +16,13 @@
 
     export default {
         props: ['photos'],
-        components: {Photo}
+        components: {Photo},
+        methods: {
+            addPhoto(photo) {
+                // console.log(photo);
+                this.$emit('addPhoto', photo);
+            }
+        }
     }
 
 </script>

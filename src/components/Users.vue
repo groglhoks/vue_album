@@ -1,14 +1,3 @@
-<script>
-
-    import User from './User.vue';
-
-    export default {
-        props: ['users'],
-        components: {User}    
-    }
-
-</script>
-
 <template>
 
     <div class="parent">
@@ -30,13 +19,31 @@
             </div>
             <div class="sub_block_content">
 
+                <!-- v-on:addPhoto="addPhoto" -->
                 <User v-for="user in users"
-                    v-bind:user="user" v-bind:key="user.id" /> 
+                    v-bind:user="user" v-bind:key="user.id" @addPhoto="addPhoto"/> 
             </div>
         </div>
     </div>
 
 </template>
+
+<script>
+
+    import User from './User.vue';
+
+    export default {
+        props: ['users'],
+        components: {User},
+        methods: {
+            addPhoto(photo) {
+                console.log(photo);
+                // this.$emit('addPhoto', photo);
+            } 
+        }    
+    }
+
+</script>
 
 <style>
 </style>

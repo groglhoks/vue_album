@@ -6,8 +6,10 @@
         </div>
     </div>
 
+    <!-- @addphoto="addphoto1" -->
+
     <Album v-for="album in albums"
-                    v-bind:album="album" v-bind:key="album.id" />
+                    v-bind:album="album" v-bind:key="album.id" @addPhoto="addPhoto"/>
 
 </template>
 
@@ -17,7 +19,7 @@ import Album from './Album.vue';
 
 export default {
     props: ['user'],
-
+    // emits: ["addphoto"],
     data() {
         return {
             expanded: false,
@@ -40,6 +42,10 @@ export default {
             } else {
                 this.albums = [];
             }
+        },
+        addPhoto(photo) {
+            console.log(photo);
+            // this.$emit('addPhoto', photo);
         }
     }
 }

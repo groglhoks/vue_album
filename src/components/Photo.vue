@@ -22,6 +22,10 @@
         methods: {
             photoFavoriteWrapperClick() {
                 this.isFavorite = !this.isFavorite;
+
+                if (this.isFavorite) {
+                    this.$emit('addPhoto', this.photo);
+                }
             }
 
         }

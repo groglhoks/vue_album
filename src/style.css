@@ -112,12 +112,18 @@ button:focus-visible {
 
 .sub_block_tab_left {
   float: left;
-  background-color: brown;
+  background-color: blueviolet;
 }
 
 .sub_block_tab_right {
   /* left: 150px; */
   float: right;
+  background-color: blueviolet;
+  
+}
+
+.background_tab {
+  cursor: pointer;
   background-color: blue;
 }
 

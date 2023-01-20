@@ -1,10 +1,10 @@
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-import Users from './components/Users.vue'
+import Form from './components/Form.vue'
 
 export default {
   name: "app",
-  components: {Users},
+  components: {Form},
   data() {
     return {
       users: []
@@ -24,6 +24,6 @@ export default {
 
 <template>
   <div>test</div> 
-  <Users v-bind:users="users" />
+  <Form v-bind:users="users" />
 </template>
  
