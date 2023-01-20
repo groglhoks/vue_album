@@ -6,18 +6,26 @@
         </div>
     </div>
 
+    <Album v-for="album in albums"
+                    v-bind:album="album" v-bind:key="album.id" />
+
 </template>
 
 <script>
+
+import Album from './Album.vue';
 
 export default {
     props: ['user'],
 
     data() {
         return {
-            expanded: false
+            expanded: false,
+            albums: []
         }    
     },
+
+    components: {Album},
 
     methods: {
         userClick: function (event) {
@@ -29,7 +37,17 @@ export default {
             // }
 
             this.expanded = !this.expanded;
-            console.log(this.expanded);
+            // console.log(this.expanded);
+
+            if (this.expanded) {
+                fetch('https://jsonplaceholder.typicode.com/albums?userId=' + this.user.id)
+                    .then((response) => response.json())
+                    .then((json) => {
+                        this.albums = json;
+                    });
+            } else {
+                this.albums = [];
+            }
         }
     }
 }

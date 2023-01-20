@@ -12,39 +12,15 @@ export default {
     }
   },
   mounted() {
-    console.log("mounted");
+    // console.log("mounted");
     fetch('https://jsonplaceholder.typicode.com/users')
       .then((response) => response.json())
       .then((json) => {
         this.users = json;
-        console.log(this.users)
+        // console.log(this.users)
       });
   }
 }
-
-// onMounted() {
-//   this.$nextTick(function () {
-//     // Код, который будет запущен только после
-//     // отрисовки всех представлений
-//   })
-// }
-
-// onMounted(() => {
-//   console.log("mounted")
-
-//   fetch('https://jsonplaceholder.typicode.com/users')
-//   .then((response) => response.json())
-//   .then((json) => 
-
-//     // this.todos = json
-//     console.log(json)
-  
-//   );
-
-
-// })
-
-
 </script>
 
 <template>
