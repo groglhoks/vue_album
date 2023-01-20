@@ -53,3 +53,15 @@ export default {
 }
 
 </script>
+
+<style>
+
+.user_line {
+    float: left;
+    height: 40px;
+    width: 100%;
+    background-color: blueviolet;
+    border: 1px solid #aaa;
+}
+
+</style>

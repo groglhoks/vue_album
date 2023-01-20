@@ -31,3 +31,22 @@
     </div>
 
 </template>
+
+<style>
+
+.block {
+    width: 600px;
+    height: 400px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    /* background-color: floralwhite; */
+    /* border-radius: 3px; */
+    /* border: 1px solid #aaa; */
+    float: left;
+}
+
+</style>

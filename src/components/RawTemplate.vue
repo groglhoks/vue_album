@@ -93,7 +93,7 @@
     background-color: rgb(196, 242, 252);
 }
 
-.block {
+/* .block {
     width: 600px;
     height: 400px;
     position: absolute;
@@ -102,10 +102,8 @@
     bottom: 0;
     left: 0;
     margin: auto;
-    /* background-color: floralwhite; */
-    /* border-radius: 3px; */
     border: 1px solid #aaa;
-}
+} */
 
 .sub_block_tab_left {
     float: left;
@@ -206,14 +204,14 @@
     border: 1px solid #aaa;
 }
 
-.photos_container {
+/* .photos_container {
     background-color: coral;
     border: 1px solid #aaa;
     margin-left: 160px;
     padding-top: 20px;
     padding-left: -40px;
     display: inline-block;
-}
+} */
 
 .photo_wrapper {
     height: 100px;
