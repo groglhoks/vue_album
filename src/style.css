@@ -96,7 +96,7 @@ button:focus-visible {
   top: 0;
   left: 0;
   overflow: auto;
-  background-color: rgb(196, 242, 252);
+  background-color: rgb(228, 236, 252);
 }
 
 .block {
@@ -124,7 +124,7 @@ button:focus-visible {
 
 .background_tab {
   cursor: pointer;
-  background-color: blue;
+  background-color: rgb(244, 244, 252);
 }
 
 .round_tab {
@@ -214,34 +214,35 @@ vertical-align:bottom; */
     height: 40px;
     width: 100%;
     background-color: blueviolet;
-    border: 1px solid #aaa;
 }
 .album_line {
   /* float: left; */
   height: 40px;
   background-color: blueviolet;
-  border: 1px solid #aaa;
 }
 
 .photos_line {
   /* float: left; */
   height: 40px;
   background-color: blueviolet;
-  border: 1px solid #aaa;
 }
 
 .photos_container {
   background-color: coral;
-  border: 1px solid #aaa;
   margin-left: 160px;
   padding-left: -40px;
   display: inline-block;
 }
 
+.photos_container_wrapper{
+  width: 100%;
+  float: left;
+  background-color: blueviolet;
+}
+
 .photos_container_favorites {
 
   background-color: coral;
-  border: 1px solid #aaa;
   margin-left: 100px; 
   margin-right: 100px;
   /* padding-left: -40px;  */
@@ -262,6 +263,18 @@ vertical-align:bottom; */
   margin-right: 15px;
   line-height: 1.2;
   margin-top: 5px;
+}
+
+.favorites_empty{
+  height: 400px;
+}
+
+.favorites_empty_img {
+  padding-top: 70px;
+}
+
+.favorites_empty_text{
+  margin-top: 20px;
 }
 
 .photo_wrapper {

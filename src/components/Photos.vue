@@ -3,8 +3,10 @@
     <div class="photos_line_comp" v-if="photos.length > 0">
         <!-- <div class="photos_line">
               </div> -->
-        <div class="photos_container">
-            <Photo v-for="photo in photos" v-bind:key="photo.id" v-bind:photo="photo" @addPhoto="addPhoto"/>
+        <div class="photos_container_wrapper">
+            <div class="photos_container">
+                <Photo v-for="photo in photos" v-bind:key="photo.id" v-bind:photo="photo" @addPhoto="addPhoto" />
+            </div>
         </div>
     </div>
 

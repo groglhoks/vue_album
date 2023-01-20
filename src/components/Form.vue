@@ -48,7 +48,9 @@
         methods: {
             addPhoto(photo) {
                 this.favorites.push(photo);
-                console.log(this.favorites);
+                localStorage.setItem('favorites', JSON.stringify(this.favorites));
+
+                // console.log(this.favorites);
                 // this.$emit('addPhoto', photo);
             },
             isCatalogPage() {
@@ -63,7 +65,14 @@
             onCatalogTabClick() {
                 this.page = "catalog"
             }
-        }    
+        },
+        mounted() {
+
+            const data_favorites = localStorage.getItem("favorites");
+            if (data_favorites) {
+                this.favorites = JSON.parse(data_favorites);   
+            }
+        } 
     }
 
 </script>
