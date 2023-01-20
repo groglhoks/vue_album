@@ -2,7 +2,7 @@
     <div class="album_line_comp">
         <div class="album_line" @click="albumClick">
             <div class="album_row_icon row_icon" v-bind:class="{'expand_icon' : !expanded, 'collaps_icon' : expanded}"></div>
-            <div class="user_name"> {{ album.title }}  </div>
+            <div class="album_name"> {{ album.title }}  </div>
         </div>
     </div> 
     <Photos v-bind:photos="photos"/>

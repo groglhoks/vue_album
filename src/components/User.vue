@@ -64,4 +64,33 @@ export default {
     border: 1px solid #aaa;
 }
 
+.user_row_icon {
+      margin-left: 40px;
+    }
+
+    .album_row_icon {
+      margin-left: 80px;
+    }
+
+    .row_icon {
+      /* margin-top: 5px; */
+      /* padding-top: 5px; */
+      width: 30px;
+      height: 30px;
+
+      background-size: 30px;
+      /* display:inline-block;
+  vertical-align:bottom; */
+      margin-top: 5px;
+      float: left;
+    }
+
+    .expand_icon {
+      background: url(src/assets/add.ico) no-repeat left center;
+    }
+
+    .collaps_icon {
+      background: url(src/assets/collaps.ico) no-repeat left center;
+    }
+
 </style>

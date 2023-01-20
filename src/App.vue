@@ -1,6 +1,5 @@
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-import RawTemplate from './components/RawTemplate.vue'
 import Users from './components/Users.vue'
 
 export default {
@@ -25,7 +24,6 @@ export default {
 
 <template>
   <div>test</div> 
-  <!-- <RawTemplate /> -->
   <Users v-bind:users="users" />
 </template>
  
