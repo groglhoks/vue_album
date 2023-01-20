@@ -44,8 +44,8 @@ export default {
             }
         },
         addPhoto(photo) {
-            console.log(photo);
-            // this.$emit('addPhoto', photo);
+            // console.log(photo);
+            this.$emit('addPhoto', photo);
         }
     }
 }

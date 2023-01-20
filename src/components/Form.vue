@@ -25,16 +25,7 @@
             </div>
     
             <div v-if="isFavoritesPage()" class="sub_block_content">
-                <div class="photos_container">
-                    <div class="photo_line">
-                        <div class="photo_favorite_wrapper"><img src="/src/assets/photo_not_favorite.ico"></div>
-                        <div class="photo_wrapper"><img src="https://via.placeholder.com/150/cda4c0"></div>
-                    </div>
-                    <div class="photo_line">
-                        <div class="photo_favorite_wrapper"><img src="/src/assets/photo_not_favorite.ico"></div>
-                        <div class="photo_wrapper"><img src="https://via.placeholder.com/150/74e371"></div>
-                    </div>
-                </div>
+                <Favorites v-bind:favorites="favorites"/>    
             </div>
         </div>
     </div>
@@ -43,18 +34,21 @@
 <script>
 
     import User from './User.vue';
+    import Favorites from './Favorites.vue'
 
     export default {
         props: ['users'],
-        components: {User},
+        components: {User, Favorites},
         data() {
             return {
-                page : "catalog"
+                page : "catalog",
+                favorites: []
             }
         },
         methods: {
             addPhoto(photo) {
-                console.log(photo);
+                this.favorites.push(photo);
+                console.log(this.favorites);
                 // this.$emit('addPhoto', photo);
             },
             isCatalogPage() {
