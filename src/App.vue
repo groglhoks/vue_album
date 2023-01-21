@@ -1,5 +1,4 @@
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 import Form from './components/Form.vue'
 
 export default {
@@ -11,12 +10,10 @@ export default {
     }
   },
   mounted() {
-    // console.log("mounted");
     fetch('https://jsonplaceholder.typicode.com/users')
       .then((response) => response.json())
       .then((json) => {
         this.users = json;
-        // console.log(this.users)
       });
   }
 }

@@ -19,9 +19,7 @@
                 </div>
             </div>
             <div v-if="isCatalogPage()" class="sub_block_content">
-    
-                <!-- v-on:addPhoto="addPhoto" -->
-                <User v-for="user in users" v-bind:user="user" v-bind:key="user.id" @addPhoto="addPhoto" />
+                <User v-for="user in users" v-bind:user="user" v-bind:key="user.id" @addPhoto="addPhoto" @showModalPhoto="showModalPhoto"/>
             </div>
     
             <div v-if="isFavoritesPage()" class="sub_block_content">
@@ -29,29 +27,39 @@
             </div>
         </div>
     </div>
+
+    <PhotoModal v-if="showModal" @close_modal="close_modal" v-bind:modalPhotoUrl="modalPhotoUrl"/>
 </template>
 
 <script>
 
     import User from './User.vue';
-    import Favorites from './Favorites.vue'
+    import Favorites from './Favorites.vue';
+    import PhotoModal from './PhotoModal.vue';
 
     export default {
         props: ['users'],
-        components: {User, Favorites},
+        components: {User, Favorites, PhotoModal},
         data() {
             return {
                 page : "catalog",
-                favorites: []
+                favorites: [],
+                modalPhotoUrl: "",
+                showModal: false,
             }
         },
         methods: {
             addPhoto(photo) {
                 this.favorites.push(photo);
                 localStorage.setItem('favorites', JSON.stringify(this.favorites));
-
-                // console.log(this.favorites);
-                // this.$emit('addPhoto', photo);
+            },
+            showModalPhoto(photo) {
+                console.log(photo); 
+                this.modalPhotoUrl = photo.url;
+                this.showModal = true;       
+            },
+            close_modal() {
+                this.showModal = false;    
             },
             isCatalogPage() {
                 return this.page === "catalog";
@@ -76,6 +84,3 @@
     }
 
 </script>
-
-<style>
-</style>

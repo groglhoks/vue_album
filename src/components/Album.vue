@@ -1,11 +1,11 @@
 <template>
     <div class="album_line_comp">
-        <div class="album_line" @click="albumClick">
+        <div class="album_line line" @click="albumClick">
             <div class="album_row_icon row_icon" v-bind:class="{'expand_icon' : !expanded, 'collaps_icon' : expanded}"></div>
             <div class="album_name"> {{ album.title }}  </div>
         </div>
     </div> 
-    <Photos v-bind:photos="photos" @addPhoto="addPhoto"/>
+    <Photos v-bind:photos="photos" @addPhoto="addPhoto" @showModalPhoto="showModalPhoto"/>
 </template>
 
 <script>
@@ -20,10 +20,6 @@ export default {
             photos: []
         }
     },
-
-    // mounted() {
-    //         console.log(album)
-    //     }
     
     methods: {
         albumClick() {
@@ -34,30 +30,20 @@ export default {
                     .then((response) => response.json())
                     .then((json) => {
                         this.photos = json;
-                        // console.log(this.photos);
                     });
             } else {
                 this.photos = [];
             }
         },
         addPhoto(photo) {
-                // console.log(photo);
-                this.$emit('addPhoto', photo);
-            }
+            this.$emit('addPhoto', photo);
+        },
+        showModalPhoto(photo) {
+            this.$emit('showModalPhoto', photo)
+        }
        
     },
 
     components: {Photos}
-// }
 }
 </script>
-
-<style>
-.album_line {
-            float: left;
-            height: 40px;
-            width: 100%;
-            background-color: blueviolet;
-            border: 1px solid #aaa;
-        }
-</style>
